@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Moatermouth | Visual Development, Illustration & Animation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio of Moatermouth (alias of Anjel Robinson) — Visual Development Artist, Illustrator & Animator.">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #e0f2fe, #fdf2ff, #fecdd3);
+      color: #0f172a;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* HEADER / NAV */
+
+    header {
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.4);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 10px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo-img {
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      object-fit: cover;
+      border: 2px solid #f9a8d4;
+      background: #fee2ff;
+    }
+
+    .site-title {
+      font-size: 16px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .site-sub {
+      font-size: 11px;
+      color: #6b7280;
+    }
+
+    .nav-right {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 2px;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      height: 1px;
+      background-color: #0f172a;
+      transition: width 0.18s ease-out;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    @media (max-width: 640px) {
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    /* LAYOUT */
+
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 30px 18px 60px;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h1, h2, h3 {
+      font-weight: 600;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    h3 {
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+
+    .subtle-text {
+      font-size: 14px;
+      color: #6b7280;
+    }
+
+    /* HERO */
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 24px;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    @media (max-width: 768px) {
+      .hero-layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 12px 30px rgba(148, 163, 184, 0.45);
+      border: 1px solid rgba(191, 219, 254, 0.95);
+    }
+
+    .hero-tagline {
+      font-size: 14px;
+      color: #4b5563;
+      margin-top: 6px;
+      margin-bottom: 12px;
+    }
+
+    .hero-meta {
+      font-size: 13px;
+      color: #6b7280;
+      margin-bottom: 10px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 8px 0 16px;
+    }
+
+    .pill {
+      font-size: 11px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: #1e3a8a;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 4px;
+      margin-bottom: 6px;
+    }
+
+    .hero-note {
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    .hero-image-card {
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: 18px;
+      padding: 12px;
+      box-shadow: 0 12px 30px rgba(148, 163, 184, 0.45);
+      border: 1px solid rgba(191, 219, 254, 0.95);
+    }
+
+    .hero-image-inner {
+      border-radius: 12px;
+      border: 1px dashed #c4b5fd;
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      color: #6b7280;
+      text-align: center;
+      padding: 10px;
+      background: linear-gradient(135deg, #e0f2fe, #fce7f3);
+    }
+
+    /* WAVE / RIPPLE BUTTONS */
+
+    .btn {
+      position: relative;
+      overflow: hidden;
+      padding: 9px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      justify-content: center;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #60a5fa, #f472b6);
+      color: #ffffff;
+      box-shadow: 0 10px 20px rgba(129, 140, 248, 0.55);
+    }
+
+    .btn-ghost {
+      background: #ffffff;
+      border: 1px solid #cbd5f5;
+      color: #0f172a;
+    }
+
+    .btn:focus {
+      outline: none;
+    }
+
+    .btn .ripple {
+      position: absolute;
+      border-radius: 50%;
+      transform: scale(0);
+      background-color: rgba(255, 255, 255, 0.6);
+      animation: ripple 0.6s linear;
+      pointer-events: none;
+    }
+
+    @keyframes ripple {
+      to {
+        transform: scale(4);
+        opacity: 0;
+      }
+    }
+
+    /* PORTFOLIO COLLECTIONS */
+
+    .section-header {
+      margin-bottom: 14px;
+    }
+
+    .section-subtitle {
+      font-size: 14px;
+      color: #6b7280;
+    }
+
+    .collection-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 16px;
+    }
+
+    .collection-card {
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: 16px;
+      padding: 14px;
+      box-shadow: 0 10px 24px rgba(148, 163, 184, 0.45);
+      border: 1px solid rgba(191, 219, 254, 0.95);
+      transition: transform 0.15s ease-out, box-shadow 0.15s ease-out, border-color 0.15s ease-out;
+      display: block;
+    }
+
+    .collection-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 30px rgba(129, 140, 248, 0.6);
+      border-color: #a5b4fc;
+    }
+
+    .collection-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      color: #6b7280;
+      margin-bottom: 4px;
+    }
+
+    .collection-title {
+      font-size: 17px;
+      margin-bottom: 6px;
+    }
+
+    .collection-desc {
+      font-size: 13px;
+      color: #4b5563;
+      margin-bottom: 8px;
+    }
+
+    .collection-items {
+      margin-top: 6px;
+      font-size: 12px;
+      color: #4b5563;
+      padding-left: 18px;
+      margin-bottom: 8px;
+    }
+
+    .collection-items li {
+      margin-bottom: 2px;
+    }
+
+    .collection-link {
+      font-size: 12px;
+      color: #2563eb;
+      text-decoration: underline;
+    }
+
+    /* ABOUT + CONTACT */
+
+    .about-text {
+      font-size: 14px;
+      max-width: 720px;
+    }
+
+    .about-text p + p {
+      margin-top: 8px;
+    }
+
+    .contact-box {
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 10px 24px rgba(148, 163, 184, 0.45);
+      border: 1px solid rgba(191, 219, 254, 0.95);
+      font-size: 14px;
+    }
+
+    .contact-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      border: none;
+      cursor: pointer;
+      background: #ffffff;
+      border: 1px solid #cbd5f5;
+      color: #0f172a;
+      box-shadow: 0 6px 14px rgba(148, 163, 184, 0.35);
+    }
+
+    .social-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: #ffffff;
+    }
+
+    .social-instagram {
+      background: radial-gradient(circle at 30% 30%, #f9a8d4, #f97316, #ef4444, #8b5cf6);
+    }
+
+    .social-youtube {
+      background: #ef4444;
+    }
+
+    .social-linkedin {
+      background: #0a66c2;
+    }
+
+    .social-handshake {
+      background: #7c3aed;
+    }
+
+    .social-label {
+      font-size: 13px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 16px 18px 26px;
+      font-size: 12px;
+      color: #6b7280;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-inner">
+      <div class="nav-left">
+        <!-- Upload logo.png to your repo -->
+        <a href="#top">
+          <img src="logo.png" alt="Moatermouth logo" class="logo-img" />
+        </a>
+        <div>
+          <div class="site-title">MOATERMOUTH</div>
+          <div class="site-sub">alias of Anjel Robinson</div>
+        </div>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-links">
+          <a href="#top">Home</a>
+          <a href="#portfolio">Work</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <a id="top"></a>
+
+    <!-- HERO -->
+    <section>
+      <div class="hero-layout">
+        <div class="hero-card">
+          <h1>Story &amp; Visual Development Portfolio</h1>
+          <p class="subtle-text">
+            Visual Development Artist · Illustrator · Animator
+          </p>
+          <p class="hero-tagline">
+            Moatermouth is the alias of <strong>Anjel Robinson</strong>, a visual development artist, illustrator,
+            and animator creating expressive, character-driven worlds through color, design, and storytelling.
+          </p>
+          <p class="hero-meta">
+            UC DAAP · Games &amp; Animation BFA · Class of 2027
+          </p>
+          <div class="hero-tags">
+            <span class="pill">Visual Development</span>
+            <span class="pill">Illustration</span>
+            <span class="pill">Character Work</span>
+            <span class="pill">Animation</span>
+          </div>
+          <div class="hero-buttons">
+            <button class="btn btn-primary wave-btn" data-target="#portfolio">
+              View Work
+            </button>
+            <button class="btn btn-ghost wave-btn" data-target="#contact">
+              Get in Touch
+            </button>
+          </div>
+          <p class="hero-note">
+            Based in Cincinnati, OH · open to internships, co-op, and select freelance projects.
+          </p>
+        </div>
+
+        <div class="hero-image-card">
+          <div class="hero-image-inner">
+            Add a key illustration, visual development spread, or animation still here later as your hero image.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO COLLECTIONS -->
+    <section id="portfolio">
+      <div class="section-header">
+        <h2>Final Portfolio Collections</h2>
+        <p class="section-subtitle">
+          A curated selection of projects across branding, illustration, fine art, print, and animation.
+        </p>
+      </div>
+
+      <div class="collection-grid">
+        <!-- Design & Branding -->
+        <a class="collection-card" href="branding.html">
+          <div class="collection-label">Collection</div>
+          <div class="collection-title">Design &amp; Branding</div>
+          <p class="collection-desc">
+            Clean, illustrative identity work for posters, logos, and client projects that focus on strong
+            visual storytelling and cohesive design systems.
+          </p>
+          <ul class="collection-items">
+            <li><strong>Branding project 1</strong> – Logo Suite</li>
+            <li><strong>Branding project 2</strong> – Brand Poster</li>
+            <li><strong>Branding project 3</strong> – Identity System</li>
+          </ul>
+          <span class="collection-link">View Design &amp; Branding →</span>
+        </a>
+
+        <!-- Illustration & Visual Development -->
+        <a class="collection-card" href="illustration.html">
+          <div class="collection-label">Collection</div>
+          <div class="collection-title">Illustration &amp; Visual Development</div>
+          <p class="collection-desc">
+            Character-driven illustration and visual development exploring personality, mood, and worldbuilding
+            through expressive design and storytelling.
+          </p>
+          <ul class="collection-items">
+            <li><strong>Character illustration 1</strong> – Character Lineup</li>
+            <li><strong>Character illustration 2</strong> – Color Script</li>
+            <li><strong>Character illustration 3</strong> – Visual Dev Spread</li>
+          </ul>
+          <span class="collection-link">View Illustration &amp; Visual Development →</span>
+        </a>
+
+        <!-- Fine Art & Visual Studies -->
+        <a class="collection-card" href="fineart.html">
+          <div class="collection-label">Collection</div>
+          <div class="collection-title">Fine Art &amp; Visual Studies</div>
+          <p class="collection-desc">
+            Realistic and abstract works blending traditional and digital media to explore light, form, identity,
+            and emotional atmosphere.
+          </p>
+          <ul class="collection-items">
+            <li><strong>Fine art portrait 1</strong> – Portrait Study</li>
+            <li><strong>Fine art portrait 2</strong> – Mixed Media</li>
+            <li><strong>Fine art portrait 3</strong> – Experimental Piece</li>
+          </ul>
+          <span class="collection-link">View Fine Art &amp; Visual Studies →</span>
+        </a>
+
+        <!-- Print & Promotional Design -->
+        <a class="collection-card" href="print.html">
+          <div class="collection-label">Collection</div>
+          <div class="collection-title">Print &amp; Promotional Design</div>
+          <p class="collection-desc">
+            Posters, book covers, and product designs that merge illustrative storytelling with graphic clarity
+            and compositional intent.
+          </p>
+          <ul class="collection-items">
+            <li><strong>Poster design 1</strong> – Event Poster</li>
+            <li><strong>Book cover 1</strong> – Book Cover</li>
+            <li><strong>Package design 1</strong> – Package Design</li>
+          </ul>
+          <span class="collection-link">View Print &amp; Promotional Design →</span>
+        </a>
+
+        <!-- Animation & Motion Studies -->
+        <a class="collection-card" href="animation.html">
+          <div class="collection-label">Collection</div>
+          <div class="collection-title">Animation &amp; Motion Studies</div>
+          <p class="collection-desc">
+            Animation stills, sequences, and experimental motion work that bring rhythm, timing, and narrative
+            energy to life.
+          </p>
+          <ul class="collection-items">
+            <li><strong>Animation study 1</strong> – Character Loop</li>
+            <li><strong>Animation study 2</strong> – Timing Test</li>
+            <li><strong>Animation study 3</strong> – Reel Stills</li>
+          </ul>
+          <span class="collection-link">View Animation &amp; Motion Studies →</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="section-header">
+        <h2>About Moatermouth</h2>
+      </div>
+      <div class="about-text">
+        <p>
+          Moatermouth is the alias of <strong>Anjel Robinson</strong>, a Cincinnati-based visual development artist,
+          illustrator, and animator. My work focuses on character-driven stories, bold color, and the line between
+          playful and unsettling.
+        </p>
+        <p>
+          I explore narrative through illustration, portraiture, branding, and animation, often blending digital and
+          traditional media. This portfolio highlights work across logo design, semi-realistic and experimental
+          portraits, print design, and visual development for imagined worlds and characters.
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-header">
+        <h2>Contact</h2>
+      </div>
+      <div class="contact-box">
+        <p>
+          Thank you for taking the time to view my work. For co-op, internships, commissions, or collaborations,
+          you can reach me at:
+        </p>
+        <p style="margin-top:6px;font-weight:600;">
+          <a href="mailto:moatermouthart@gmail.com">moatermouthart@gmail.com</a>
+        </p>
+        <p style="margin-top:8px;font-size:13px;color:#6b7280;">
+          I’m especially interested in visual development, illustration, and character-focused animation projects.
+        </p>
+
+        <div class="contact-buttons">
+          <a class="social-btn wave-btn" href="https://www.instagram.com/moatermouth/" target="_blank" rel="noreferrer">
+            <span class="social-icon social-instagram">📸</span>
+            <span class="social-label">Instagram</span>
+          </a>
+
+          <a class="social-btn wave-btn" href="https://www.youtube.com/@moatermouth7141" target="_blank" rel="noreferrer">
+            <span class="social-icon social-youtube">▶</span>
+            <span class="social-label">YouTube</span>
+          </a>
+
+          <a class="social-btn wave-btn" href="https://www.linkedin.com/in/anjel-rob/" target="_blank" rel="noreferrer">
+            <span class="social-icon social-linkedin">in</span>
+            <span class="social-label">LinkedIn</span>
+          </a>
+
+          <a class="social-btn wave-btn" href="https://uc.joinhandshake.com/profiles/anjel-rob" target="_blank" rel="noreferrer">
+            <span class="social-icon social-handshake">🤝</span>
+            <span class="social-label">Handshake</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Moatermouth · Portfolio of Anjel Robinson.
+  </footer>
+
+  <script>
+    // Year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function smoothScrollTo(selector) {
+      const el = document.querySelector(selector);
+      if (!el) return;
+      const y = el.getBoundingClientRect().top + window.scrollY - 70;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+
+    // Smooth scroll for nav
+    document.querySelectorAll('.nav-links a[href^="#"]').forEach(link => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        smoothScrollTo(link.getAttribute("href"));
+      });
+    });
+
+    // Wave / ripple effect on buttons + optional scroll
+    document.querySelectorAll(".wave-btn").forEach(btn => {
+      btn.addEventListener("click", function (e) {
+        const rect = this.getBoundingClientRect();
+        const ripple = document.createElement("span");
+        const size = Math.max(rect.width, rect.height);
+        ripple.style.width = ripple.style.height = size + "px";
+        ripple.style.left = (e.clientX - rect.left - size / 2) + "px";
+        ripple.style.top = (e.clientY - rect.top - size / 2) + "px";
+        ripple.classList.add("ripple");
+        this.appendChild(ripple);
+        setTimeout(() => ripple.remove(), 600);
+
+        const target = this.getAttribute("data-target");
+        if (target && target.startsWith("#")) {
+          smoothScrollTo(target);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
