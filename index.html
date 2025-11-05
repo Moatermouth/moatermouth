@@ -1,198 +1,372 @@
-diff --git a/index.html b/index.html
-index ee7804bd3970f86a565d192cd558e13c8f790a99..2c03381f660da094a6955aacdb88ddd4238ad90d 100644
---- a/index.html
-+++ b/index.html
-@@ -359,83 +359,119 @@
-       font-size: 12px;
-       color: #2563eb;
-       text-decoration: underline;
-     }
- 
-     /* ABOUT + CONTACT */
- 
-     .about-text {
-       font-size: 14px;
-       max-width: 720px;
-     }
- 
-     .about-text p + p {
-       margin-top: 8px;
-     }
- 
-     .contact-box {
-       background: rgba(255, 255, 255, 0.96);
-       border-radius: 16px;
-       padding: 16px;
-       box-shadow: 0 10px 24px rgba(148, 163, 184, 0.45);
-       border: 1px solid rgba(191, 219, 254, 0.95);
-       font-size: 14px;
-     }
- 
-+    .contact-emails {
-+      list-style: none;
-+      margin: 8px 0 0;
-+      padding: 0;
-+    }
-+
-+    .contact-emails li + li {
-+      margin-top: 4px;
-+    }
-+
-+    .contact-emails a {
-+      font-weight: 600;
-+      text-decoration: underline;
-+      color: #2563eb;
-+    }
-+
-+    .contact-resume {
-+      margin-top: 12px;
-+    }
-+
-+    .contact-resume a {
-+      font-weight: 600;
-+      color: #2563eb;
-+      text-decoration: underline;
-+    }
-+
-+    .contact-note {
-+      margin-top: 10px;
-+      font-size: 13px;
-+      color: #6b7280;
-+    }
-+
-     .contact-buttons {
-       display: flex;
-       flex-wrap: wrap;
-       gap: 8px;
-       margin-top: 10px;
-     }
- 
-     .social-btn {
-       display: inline-flex;
-       align-items: center;
-       gap: 6px;
-       padding: 8px 14px;
-       border-radius: 999px;
-       font-size: 13px;
-       border: none;
-       cursor: pointer;
-       background: #ffffff;
-       border: 1px solid #cbd5f5;
-       color: #0f172a;
-       box-shadow: 0 6px 14px rgba(148, 163, 184, 0.35);
-     }
- 
-     .social-icon {
-       width: 20px;
-       height: 20px;
-       border-radius: 999px;
-       display: inline-flex;
-       align-items: center;
-       justify-content: center;
-       font-size: 12px;
-       color: #ffffff;
-     }
- 
-+    .social-resume {
-+      background: linear-gradient(135deg, #38bdf8, #f472b6);
-+    }
-+
-     .social-instagram {
-       background: radial-gradient(circle at 30% 30%, #f9a8d4, #f97316, #ef4444, #8b5cf6);
-     }
- 
-     .social-youtube {
-       background: #ef4444;
-     }
- 
-     .social-linkedin {
-       background: #0a66c2;
-     }
- 
-     .social-handshake {
-       background: #7c3aed;
-     }
- 
-     .social-label {
-       font-size: 13px;
-     }
- 
-     footer {
-       text-align: center;
-       padding: 16px 18px 26px;
-       font-size: 12px;
-       color: #6b7280;
-@@ -609,58 +645,70 @@
-       </div>
-       <div class="about-text">
-         <p>
-           Moatermouth is the alias of <strong>Anjel Robinson</strong>, a Cincinnati-based visual development artist,
-           illustrator, and animator. My work focuses on character-driven stories, bold color, and the line between
-           playful and unsettling.
-         </p>
-         <p>
-           I explore narrative through illustration, portraiture, branding, and animation, often blending digital and
-           traditional media. This portfolio highlights work across logo design, semi-realistic and experimental
-           portraits, print design, and visual development for imagined worlds and characters.
-         </p>
-       </div>
-     </section>
- 
-     <!-- CONTACT -->
-     <section id="contact">
-       <div class="section-header">
-         <h2>Contact</h2>
-       </div>
-       <div class="contact-box">
-         <p>
-           Thank you for taking the time to view my work. For co-op, internships, commissions, or collaborations,
-           you can reach me at:
-         </p>
--        <p style="margin-top:6px;font-weight:600;">
--          <a href="mailto:moatermouthart@gmail.com">moatermouthart@gmail.com</a>
-+        <ul class="contact-emails">
-+          <li><a href="mailto:moatermouthart@gmail.com">moatermouthart@gmail.com</a></li>
-+          <li><a href="mailto:Robin5a6@mail.uc.edu">Robin5a6@mail.uc.edu</a></li>
-+        </ul>
-+        <p class="contact-resume">
-+          <strong>Resume:</strong>
-+          <a href="assets/anjel-robinson-resume.png" target="_blank" rel="noreferrer">
-+            View or download Anjel Robinson's resume (PNG)
-+          </a>
-         </p>
--        <p style="margin-top:8px;font-size:13px;color:#6b7280;">
-+        <p class="contact-note">
-           I’m especially interested in visual development, illustration, and character-focused animation projects.
-         </p>
- 
-         <div class="contact-buttons">
-+          <a class="social-btn wave-btn" href="assets/anjel-robinson-resume.png" target="_blank" rel="noreferrer">
-+            <span class="social-icon social-resume">📄</span>
-+            <span class="social-label">Resume (PNG)</span>
-+          </a>
-+
-           <a class="social-btn wave-btn" href="https://www.instagram.com/moatermouth/" target="_blank" rel="noreferrer">
-             <span class="social-icon social-instagram">📸</span>
-             <span class="social-label">Instagram</span>
-           </a>
- 
-           <a class="social-btn wave-btn" href="https://www.youtube.com/@moatermouth7141" target="_blank" rel="noreferrer">
-             <span class="social-icon social-youtube">▶</span>
-             <span class="social-label">YouTube</span>
-           </a>
- 
-           <a class="social-btn wave-btn" href="https://www.linkedin.com/in/anjel-rob/" target="_blank" rel="noreferrer">
-             <span class="social-icon social-linkedin">in</span>
-             <span class="social-label">LinkedIn</span>
-           </a>
- 
-           <a class="social-btn wave-btn" href="https://uc.joinhandshake.com/profiles/anjel-rob" target="_blank" rel="noreferrer">
-             <span class="social-icon social-handshake">🤝</span>
-             <span class="social-label">Handshake</span>
-           </a>
-         </div>
-       </div>
-     </section>
-   </main>
- 
-   <footer>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Moatermouth | Anjel Robinson</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #bae6fd, #fce7f3);
+      color: #0f172a;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* HEADER */
+
+    header {
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(148,163,184,0.4);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 10px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo-img {
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      object-fit: cover;
+      border: 2px solid #f9a8d4;
+      background: #fee2ff;
+    }
+
+    .site-title {
+      font-size: 14px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #0f172a;
+      font-size: 14px;
+      margin-left: 16px;
+      font-weight: 500;
+      position: relative;
+      padding-bottom: 2px;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: #0f172a;
+      transition: width 0.18s ease-out;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    @media (max-width: 800px) {
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav a {
+        margin-left: 0;
+        margin-right: 14px;
+      }
+    }
+
+    /* LAYOUT / SECTIONS */
+
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 18px 40px;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h1, h2 {
+      color: #1e293b;
+      margin-bottom: 10px;
+    }
+
+    /* HERO */
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 24px;
+      align-items: center;
+      margin-bottom: 32px;
+    }
+
+    .hero-text p {
+      font-size: 14px;
+      color: #374151;
+      max-width: 520px;
+    }
+
+    .hero-art-card {
+      background: rgba(255,255,255,0.96);
+      border-radius: 18px;
+      padding: 10px;
+      box-shadow: 0 10px 26px rgba(148,163,184,0.45);
+      border: 1px solid rgba(191,219,254,0.95);
+    }
+
+    .hero-art-card img {
+      border-radius: 14px;
+    }
+
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    /* RESUME + CONTACT CARDS */
+
+    .resume-section,
+    .contact-box {
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: 14px;
+      padding: 18px;
+      box-shadow: 0 6px 16px rgba(148, 163, 184, 0.35);
+      font-size: 14px;
+    }
+
+    .resume-download {
+      display: inline-block;
+      background: linear-gradient(135deg, #60a5fa, #f472b6);
+      color: white;
+      padding: 7px 16px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 13px;
+      margin-top: 8px;
+      box-shadow: 0 8px 18px rgba(129, 140, 248, 0.55);
+    }
+
+    .contact-box {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+      gap: 16px;
+      align-items: center;
+    }
+
+    .contact-photo img {
+      width: 210px;
+      height: 210px;
+      object-fit: cover;
+      border-radius: 999px;
+      border: 3px solid #f9a8d4;
+      box-shadow: 0 10px 24px rgba(148,163,184,0.5);
+    }
+
+    @media (max-width: 800px) {
+      .contact-box {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .contact-photo {
+        order: -1;
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    /* SOCIAL LINKS */
+
+    .contact-links p {
+      margin-bottom: 6px;
+    }
+
+    .contact-links a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    .contact-links a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 16px;
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    /* WAVE / RIPPLE BUTTON EFFECT */
+
+    .wave-btn {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+    }
+
+    .wave-btn .ripple {
+      position: absolute;
+      border-radius: 50%;
+      transform: scale(0);
+      background-color: rgba(255, 255, 255, 0.6);
+      animation: ripple 0.6s linear;
+      pointer-events: none;
+    }
+
+    @keyframes ripple {
+      to {
+        transform: scale(4);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-inner">
+      <div class="nav-left">
+        <!-- Logo circle in the corner using your original file name -->
+        <a href="index.html">
+          <img src="Anjel Logo" alt="Anjel R logo" class="logo-img" />
+        </a>
+        <div class="site-title">MOATERMOUTH · ANJEL ROBINSON</div>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Anjel Robinson</h1>
+        <p>Visual Development Artist · Illustrator · Animator</p>
+        <p>
+          I’m a student visual development artist who loves character-driven stories, cozy color palettes,
+          and a little bit of cartoon weirdness.
+        </p>
+      </div>
+      <div class="hero-art-card">
+        <!-- Home screen drawing using your original filename -->
+        <img src="get_to_know_me_club_copy.jpg" alt="Get to Know Me illustration" />
+      </div>
+    </section>
+
+    <!-- RESUME -->
+    <section id="resume" class="resume-section">
+      <h2>Resume</h2>
+      <p>
+        <strong>BFA in Games &amp; Animation</strong>, University of Cincinnati (DAAP) · Screenwriting Certificate · 2024–2028
+      </p>
+      <p>
+        Experience in mural work, teaching, customer service, and visual storytelling through illustration and animation.
+      </p>
+      <!-- Resume button with wave effect -->
+      <a class="resume-download wave-btn" href="Robinson_Anjel_Final_Resume.pdf" target="_blank">
+        📄 View Full Resume (PDF)
+      </a>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact-box">
+      <div class="contact-links">
+        <h2>Contact</h2>
+        <p>
+          <strong>School Email:</strong>
+          <a href="mailto:Robin5a6@mail.uc.edu">Robin5a6@mail.uc.edu</a>
+        </p>
+        <p>
+          <strong>Instagram:</strong>
+          <a class="wave-btn" href="https://www.instagram.com/moatermouth/" target="_blank">@moatermouth</a>
+        </p>
+        <p>
+          <strong>LinkedIn:</strong>
+          <a class="wave-btn" href="https://www.linkedin.com/in/anjel-rob/" target="_blank">anjel-rob</a>
+        </p>
+        <p>
+          <strong>YouTube:</strong>
+          <a class="wave-btn" href="https://www.youtube.com/@moatermouth7141" target="_blank">@moatermouth7141</a>
+        </p>
+        <p>
+          <strong>Handshake:</strong>
+          <a class="wave-btn" href="https://uc.joinhandshake.com/profiles/anjel-rob" target="_blank">Handshake Profile</a>
+        </p>
+      </div>
+      <div class="contact-photo">
+        <!-- Face photo using your original filename -->
+        <img src="SAM_0226.JPG" alt="Photo of Anjel Robinson" />
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Moatermouth · Portfolio of Anjel Robinson.
+  </footer>
+
+  <script>
+    // footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // wave / ripple effect
+    document.querySelectorAll(".wave-btn").forEach(function (btn) {
+      btn.addEventListener("click", function (e) {
+        const rect = this.getBoundingClientRect();
+        const ripple = document.createElement("span");
+        const size = Math.max(rect.width, rect.height);
+        ripple.style.width = ripple.style.height = size + "px";
+        ripple.style.left = (e.clientX - rect.left - size / 2) + "px";
+        ripple.style.top = (e.clientY - rect.top - size / 2) + "px";
+        ripple.classList.add("ripple");
+        this.appendChild(ripple);
+        setTimeout(function () {
+          ripple.remove();
+        }, 600);
+      });
+    });
+  </script>
+</body>
+</html>
+
