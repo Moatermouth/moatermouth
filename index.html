@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Moatermouth | Anjel Robinson</title>
+  <title>Moatermouth | Visual Development, Illustration & Animation</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio of Moatermouth (alias of Anjel Robinson) — Visual Development Artist, Illustrator & Animator.">
   <style>
     * {
       box-sizing: border-box;
@@ -13,10 +14,10 @@
 
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: linear-gradient(135deg, #bae6fd, #fce7f3);
+      min-height: 100vh;
+      background: linear-gradient(135deg, #e0f2fe, #fdf2ff, #fecdd3);
       color: #0f172a;
       line-height: 1.6;
-      margin: 0;
     }
 
     a {
@@ -29,12 +30,12 @@
       display: block;
     }
 
-    /* HEADER */
+    /* HEADER / NAV */
 
     header {
-      background: rgba(255,255,255,0.9);
+      background: rgba(255, 255, 255, 0.94);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(148,163,184,0.4);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.4);
       position: sticky;
       top: 0;
       z-index: 10;
@@ -47,7 +48,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 12px;
+      gap: 16px;
     }
 
     .nav-left {
@@ -72,168 +73,171 @@
       font-weight: 600;
     }
 
-    nav a {
-      text-decoration: none;
-      color: #0f172a;
-      font-size: 14px;
-      margin-left: 16px;
-      font-weight: 500;
+    .site-sub {
+      font-size: 11px;
+      color: #6b7280;
+    }
+
+    .nav-right {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .nav-links a {
       position: relative;
       padding-bottom: 2px;
     }
 
-    nav a::after {
+    .nav-links a::after {
       content: "";
       position: absolute;
       left: 0;
       bottom: 0;
-      width: 0;
+      width: 0%;
       height: 1px;
-      background: #0f172a;
+      background-color: #0f172a;
       transition: width 0.18s ease-out;
     }
 
-    nav a:hover::after {
+    .nav-links a:hover::after {
       width: 100%;
     }
 
-    @media (max-width: 800px) {
+    @media (max-width: 640px) {
       .nav-inner {
         flex-direction: column;
         align-items: flex-start;
       }
-      nav a {
-        margin-left: 0;
-        margin-right: 14px;
-      }
     }
 
-    /* LAYOUT / SECTIONS */
+    /* LAYOUT */
 
     main {
       max-width: 960px;
       margin: 0 auto;
-      padding: 32px 18px 40px;
+      padding: 30px 18px 60px;
     }
 
     section {
       margin-bottom: 40px;
     }
 
-    h1, h2 {
-      color: #1e293b;
-      margin-bottom: 10px;
+    h1, h2, h3 {
+      font-weight: 600;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    h3 {
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+
+    .subtle-text {
+      font-size: 14px;
+      color: #6b7280;
     }
 
     /* HERO */
 
-    .hero {
+    .hero-layout {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
       gap: 24px;
       align-items: center;
-      margin-bottom: 32px;
+      margin-bottom: 30px;
     }
 
-    .hero-text p {
-      font-size: 14px;
-      color: #374151;
-      max-width: 520px;
-    }
-
-    .hero-art-card {
-      background: rgba(255,255,255,0.96);
-      border-radius: 18px;
-      padding: 10px;
-      box-shadow: 0 10px 26px rgba(148,163,184,0.45);
-      border: 1px solid rgba(191,219,254,0.95);
-    }
-
-    .hero-art-card img {
-      border-radius: 14px;
-    }
-
-    @media (max-width: 800px) {
-      .hero {
+    @media (max-width: 768px) {
+      .hero-layout {
         grid-template-columns: minmax(0, 1fr);
       }
     }
 
-    /* RESUME + CONTACT CARDS */
-
-    .resume-section,
-    .contact-box {
+    .hero-card {
       background: rgba(255, 255, 255, 0.96);
-      border-radius: 14px;
+      border-radius: 18px;
       padding: 18px;
-      box-shadow: 0 6px 16px rgba(148, 163, 184, 0.35);
+      box-shadow: 0 12px 30px rgba(148, 163, 184, 0.45);
+      border: 1px solid rgba(191, 219, 254, 0.95);
+    }
+
+    .hero-tagline {
       font-size: 14px;
+      color: #4b5563;
+      margin-top: 6px;
+      margin-bottom: 12px;
     }
 
-    .resume-download {
-      display: inline-block;
-      background: linear-gradient(135deg, #60a5fa, #f472b6);
-      color: white;
-      padding: 7px 16px;
-      border-radius: 999px;
-      text-decoration: none;
+    .hero-meta {
       font-size: 13px;
-      margin-top: 8px;
-      box-shadow: 0 8px 18px rgba(129, 140, 248, 0.55);
+      color: #6b7280;
+      margin-bottom: 10px;
     }
 
-    .contact-box {
-      display: grid;
-      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
-      gap: 16px;
-      align-items: center;
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 8px 0 16px;
     }
 
-    .contact-photo img {
-      width: 210px;
-      height: 210px;
-      object-fit: cover;
+    .pill {
+      font-size: 11px;
+      padding: 4px 9px;
       border-radius: 999px;
-      border: 3px solid #f9a8d4;
-      box-shadow: 0 10px 24px rgba(148,163,184,0.5);
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: #1e3a8a;
     }
 
-    @media (max-width: 800px) {
-      .contact-box {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .contact-photo {
-        order: -1;
-        display: flex;
-        justify-content: center;
-      }
-    }
-
-    /* SOCIAL LINKS */
-
-    .contact-links p {
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 4px;
       margin-bottom: 6px;
     }
 
-    .contact-links a {
-      color: #2563eb;
-      text-decoration: none;
-    }
-
-    .contact-links a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      text-align: center;
-      padding: 16px;
+    .hero-note {
       font-size: 12px;
       color: #6b7280;
     }
 
-    /* WAVE / RIPPLE BUTTON EFFECT */
+    .hero-image-card {
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: 18px;
+      padding: 10px;
+      box-shadow: 0 12px 30px rgba(148, 163, 184, 0.45);
+      border: 1px solid rgba(191, 219, 254, 0.95);
+    }
 
-    .wave-btn {
+    .hero-image-card img {
+      border-radius: 14px;
+    }
+
+    /* BUTTONS / WAVE EFFECT */
+
+    .btn,
+    .social-chip,
+    .resume-download {
       position: relative;
       overflow: hidden;
       cursor: pointer;
@@ -241,6 +245,25 @@
       align-items: center;
       justify-content: center;
       gap: 4px;
+    }
+
+    .btn {
+      padding: 9px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      border: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #60a5fa, #f472b6);
+      color: #ffffff;
+      box-shadow: 0 10px 20px rgba(129, 140, 248, 0.55);
+    }
+
+    .btn-ghost {
+      background: #ffffff;
+      border: 1px solid #cbd5f5;
+      color: #0f172a;
     }
 
     .wave-btn .ripple {
@@ -258,40 +281,337 @@
         opacity: 0;
       }
     }
+
+    /* PORTFOLIO COLLECTIONS */
+
+    .section-header {
+      margin-bottom: 14px;
+    }
+
+    .section-subtitle {
+      font-size: 14px;
+      color: #6b7280;
+    }
+
+    .collection-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 16px;
+    }
+
+    .collection-card {
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: 16px;
+      padding: 14px;
+      box-shadow: 0 10px 24px rgba(148, 163, 184, 0.45);
+      border: 1px solid rgba(191, 219, 254, 0.95);
+      transition: transform 0.15s ease-out, box-shadow 0.15s ease-out, border-color 0.15s ease-out;
+      display: block;
+    }
+
+    .collection-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 30px rgba(129, 140, 248, 0.6);
+      border-color: #a5b4fc;
+    }
+
+    .collection-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      color: #6b7280;
+      margin-bottom: 4px;
+    }
+
+    .collection-title {
+      font-size: 17px;
+      margin-bottom: 6px;
+    }
+
+    .collection-desc {
+      font-size: 13px;
+      color: #4b5563;
+      margin-bottom: 8px;
+    }
+
+    .collection-items {
+      margin-top: 6px;
+      font-size: 12px;
+      color: #4b5563;
+      padding-left: 18px;
+      margin-bottom: 8px;
+    }
+
+    .collection-items li {
+      margin-bottom: 2px;
+    }
+
+    .collection-link {
+      font-size: 12px;
+      color: #2563eb;
+      text-decoration: underline;
+    }
+
+    /* RESUME SECTION */
+
+    .resume-section {
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: 14px;
+      padding: 18px;
+      box-shadow: 0 6px 16px rgba(148, 163, 184, 0.35);
+      font-size: 14px;
+    }
+
+    .resume-section p {
+      color: #374151;
+      margin-bottom: 8px;
+    }
+
+    .resume-section strong {
+      color: #111827;
+    }
+
+    .resume-download {
+      background: linear-gradient(135deg, #60a5fa, #f472b6);
+      color: #ffffff;
+      padding: 7px 16px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 13px;
+      box-shadow: 0 8px 18px rgba(129, 140, 248, 0.55);
+    }
+
+    /* CONTACT SECTION */
+
+    .contact-box {
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: 14px;
+      padding: 18px;
+      box-shadow: 0 6px 16px rgba(148, 163, 184, 0.35);
+      font-size: 14px;
+      display: grid;
+      grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.3fr);
+      gap: 16px;
+      align-items: center;
+    }
+
+    .contact-box p {
+      color: #374151;
+      margin-bottom: 6px;
+    }
+
+    .contact-emails a {
+      color: #2563eb;
+    }
+
+    .social-links {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .social-chip {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: #1e3a8a;
+      font-size: 13px;
+    }
+
+    .social-chip span.icon {
+      font-size: 14px;
+    }
+
+    .contact-photo {
+      display: flex;
+      justify-content: center;
+    }
+
+    .contact-photo img {
+      width: 210px;
+      height: 210px;
+      object-fit: cover;
+      border-radius: 999px;
+      border: 3px solid #f9a8d4;
+      box-shadow: 0 10px 24px rgba(148,163,184,0.5);
+    }
+
+    @media (max-width: 800px) {
+      .contact-box {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .contact-photo {
+        order: -1;
+      }
+    }
+
+    footer {
+      text-align: center;
+      padding: 16px 18px 24px;
+      font-size: 12px;
+      color: #6b7280;
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="nav-inner">
       <div class="nav-left">
-        <!-- Logo circle in the corner using your original file name -->
-        <a href="index.html">
-          <img src="Anjel Logo" alt="Anjel R logo" class="logo-img" />
+        <!-- Logo in circle (branding) -->
+        <a href="#top">
+          <img src="Anjel Logo" alt="Anjel logo" class="logo-img" />
         </a>
-        <div class="site-title">MOATERMOUTH · ANJEL ROBINSON</div>
+        <div>
+          <div class="site-title">MOATERMOUTH</div>
+          <div class="site-sub">alias of Anjel Robinson</div>
+        </div>
       </div>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="#resume">Resume</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <div class="nav-right">
+        <nav class="nav-links">
+          <a href="#top">Home</a>
+          <a href="#portfolio">Work</a>
+          <a href="#resume">Resume</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
     </div>
   </header>
 
   <main>
+    <a id="top"></a>
+
     <!-- HERO -->
-    <section class="hero">
-      <div class="hero-text">
-        <h1>Anjel Robinson</h1>
-        <p>Visual Development Artist · Illustrator · Animator</p>
-        <p>
-          I’m a student visual development artist who loves character-driven stories, cozy color palettes,
-          and a little bit of cartoon weirdness.
+    <section>
+      <div class="hero-layout">
+        <div class="hero-card">
+          <h1>Story &amp; Visual Development Portfolio</h1>
+          <p class="subtle-text">
+            Visual Development Artist · Illustrator · Animator
+          </p>
+          <p class="hero-tagline">
+            Moatermouth is the alias of <strong>Anjel Robinson</strong>, a visual development artist, illustrator,
+            and animator creating expressive, character-driven worlds through color, design, and storytelling.
+          </p>
+          <p class="hero-meta">
+            UC DAAP · Games &amp; Animation BFA · Class of 2028
+          </p>
+          <div class="hero-tags">
+            <span class="pill">Visual Development</span>
+            <span class="pill">Illustration</span>
+            <span class="pill">Character Work</span>
+            <span class="pill">Animation</span>
+          </div>
+          <div class="hero-buttons">
+            <button class="btn btn-primary wave-btn" data-target="#portfolio">
+              View Work
+            </button>
+            <button class="btn btn-ghost wave-btn" data-target="#contact">
+              Get in Touch
+            </button>
+          </div>
+          <p class="hero-note">
+            Based in Cincinnati, OH · open to internships, co-op, and select freelance projects.
+          </p>
+        </div>
+
+        <!-- Your "Get to Know Me" drawing on the home screen -->
+        <div class="hero-image-card">
+          <img src="get_to_know_me_club_copy.jpg" alt="Get to know me illustration of Anjel" />
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO COLLECTIONS (BUCKETS) -->
+    <section id="portfolio">
+      <div class="section-header">
+        <h2>Final Portfolio Collections</h2>
+        <p class="section-subtitle">
+          A curated selection of projects across branding, illustration, fine art, print, and animation.
         </p>
       </div>
-      <div class="hero-art-card">
-        <!-- Home screen drawing using your original filename -->
-        <img src="get_to_know_me_club_copy.jpg" alt="Get to Know Me illustration" />
+
+      <div class="collection-grid">
+        <!-- Design & Branding -->
+        <a class="collection-card" href="branding.html">
+          <div class="collection-label">Collection</div>
+          <div class="collection-title">Design &amp; Branding</div>
+          <p class="collection-desc">
+            Clean, illustrative identity work for posters, logos, and client projects that focus on strong
+            visual storytelling and cohesive design systems.
+          </p>
+          <ul class="collection-items">
+            <li><strong>Branding project 1</strong> – Logo Suite</li>
+            <li><strong>Branding project 2</strong> – Brand Poster</li>
+            <li><strong>Branding project 3</strong> – Identity System</li>
+          </ul>
+          <span class="collection-link">View Design &amp; Branding →</span>
+        </a>
+
+        <!-- Illustration & Visual Development -->
+        <a class="collection-card" href="illustration.html">
+          <div class="collection-label">Collection</div>
+          <div class="collection-title">Illustration &amp; Visual Development</div>
+          <p class="collection-desc">
+            Character-driven illustration and visual development exploring personality, mood, and worldbuilding
+            through expressive design and storytelling.
+          </p>
+          <ul class="collection-items">
+            <li><strong>Character illustration 1</strong> – Character Lineup</li>
+            <li><strong>Character illustration 2</strong> – Color Script</li>
+            <li><strong>Character illustration 3</strong> – Visual Dev Spread</li>
+          </ul>
+          <span class="collection-link">View Illustration &amp; Visual Development →</span>
+        </a>
+
+        <!-- Fine Art & Visual Studies -->
+        <a class="collection-card" href="fineart.html">
+          <div class="collection-label">Collection</div>
+          <div class="collection-title">Fine Art &amp; Visual Studies</div>
+          <p class="collection-desc">
+            Realistic and abstract works blending traditional and digital media to explore light, form, identity,
+            and emotional atmosphere.
+          </p>
+          <ul class="collection-items">
+            <li><strong>Fine art portrait 1</strong> – Portrait Study</li>
+            <li><strong>Fine art portrait 2</strong> – Mixed Media</li>
+            <li><strong>Fine art portrait 3</strong> – Experimental Piece</li>
+          </ul>
+          <span class="collection-link">View Fine Art &amp; Visual Studies →</span>
+        </a>
+
+        <!-- Print & Promotional Design -->
+        <a class="collection-card" href="print.html">
+          <div class="collection-label">Collection</div>
+          <div class="collection-title">Print &amp; Promotional Design</div>
+          <p class="collection-desc">
+            Posters, book covers, and product designs that merge illustrative storytelling with graphic clarity
+            and compositional intent.
+          </p>
+          <ul class="collection-items">
+            <li><strong>Poster design 1</strong> – Event Poster</li>
+            <li><strong>Book cover 1</strong> – Book Cover</li>
+            <li><strong>Package design 1</strong> – Package Design</li>
+          </ul>
+          <span class="collection-link">View Print &amp; Promotional Design →</span>
+        </a>
+
+        <!-- Animation & Motion Studies -->
+        <a class="collection-card" href="animation.html">
+          <div class="collection-label">Collection</div>
+          <div class="collection-title">Animation &amp; Motion Studies</div>
+          <p class="collection-desc">
+            Animation stills, sequences, and experimental motion work that bring rhythm, timing, and narrative
+            energy to life.
+          </p>
+          <ul class="collection-items">
+            <li><strong>Animation study 1</strong> – Character Loop</li>
+            <li><strong>Animation study 2</strong> – Timing Test</li>
+            <li><strong>Animation study 3</strong> – Reel Stills</li>
+          </ul>
+          <span class="collection-link">View Animation &amp; Motion Studies →</span>
+        </a>
       </div>
     </section>
 
@@ -299,44 +619,56 @@
     <section id="resume" class="resume-section">
       <h2>Resume</h2>
       <p>
-        <strong>BFA in Games &amp; Animation</strong>, University of Cincinnati (DAAP) · Screenwriting Certificate · 2024–2028
+        <strong>Student &amp; Visual Development Artist</strong><br>
+        BFA in Games &amp; Animation, University of Cincinnati (DAAP) · Screenwriting Certificate · 2024–2028
       </p>
       <p>
         Experience in mural work, teaching, customer service, and visual storytelling through illustration and animation.
       </p>
-      <!-- Resume button with wave effect -->
+      <!-- Make sure this file is in the repo -->
       <a class="resume-download wave-btn" href="Robinson_Anjel_Final_Resume.pdf" target="_blank">
         📄 View Full Resume (PDF)
       </a>
     </section>
 
-    <!-- CONTACT -->
+    <!-- CONTACT WITH YOUR PHOTO -->
     <section id="contact" class="contact-box">
-      <div class="contact-links">
+      <div>
         <h2>Contact</h2>
         <p>
-          <strong>School Email:</strong>
-          <a href="mailto:Robin5a6@mail.uc.edu">Robin5a6@mail.uc.edu</a>
+          Thank you for taking the time to view my work. I’m open to internships, co-op positions, studio and
+          freelance illustration/animation projects, and opportunities to work with kids and teens through art.
         </p>
-        <p>
-          <strong>Instagram:</strong>
-          <a class="wave-btn" href="https://www.instagram.com/moatermouth/" target="_blank">@moatermouth</a>
-        </p>
-        <p>
-          <strong>LinkedIn:</strong>
-          <a class="wave-btn" href="https://www.linkedin.com/in/anjel-rob/" target="_blank">anjel-rob</a>
-        </p>
-        <p>
-          <strong>YouTube:</strong>
-          <a class="wave-btn" href="https://www.youtube.com/@moatermouth7141" target="_blank">@moatermouth7141</a>
-        </p>
-        <p>
-          <strong>Handshake:</strong>
-          <a class="wave-btn" href="https://uc.joinhandshake.com/profiles/anjel-rob" target="_blank">Handshake Profile</a>
-        </p>
+
+        <div class="contact-emails">
+          <p>
+            <strong>School Email:</strong>
+            <a href="mailto:Robin5a6@mail.uc.edu">Robin5a6@mail.uc.edu</a>
+          </p>
+          <p>
+            <strong>Art Email:</strong>
+            <a href="mailto:moatermouthart@gmail.com">moatermouthart@gmail.com</a>
+          </p>
+        </div>
+
+        <div class="social-links">
+          <a class="social-chip wave-btn" href="https://www.instagram.com/moatermouth/" target="_blank" rel="noreferrer">
+            <span class="icon">📸</span> Instagram
+          </a>
+          <a class="social-chip wave-btn" href="https://www.youtube.com/@moatermouth7141" target="_blank" rel="noreferrer">
+            <span class="icon">▶</span> YouTube
+          </a>
+          <a class="social-chip wave-btn" href="https://www.linkedin.com/in/anjel-rob/" target="_blank" rel="noreferrer">
+            <span class="icon">in</span> LinkedIn
+          </a>
+          <a class="social-chip wave-btn" href="https://uc.joinhandshake.com/profiles/anjel-rob" target="_blank" rel="noreferrer">
+            <span class="icon">🤝</span> Handshake
+          </a>
+        </div>
       </div>
+
       <div class="contact-photo">
-        <!-- Face photo using your original filename -->
+        <!-- Your face photo -->
         <img src="SAM_0226.JPG" alt="Photo of Anjel Robinson" />
       </div>
     </section>
@@ -350,8 +682,23 @@
     // footer year
     document.getElementById("year").textContent = new Date().getFullYear();
 
+    function smoothScrollTo(selector) {
+      const el = document.querySelector(selector);
+      if (!el) return;
+      const y = el.getBoundingClientRect().top + window.scrollY - 70;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+
+    // smooth scroll for header nav
+    document.querySelectorAll('.nav-links a[href^="#"]').forEach(link => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        smoothScrollTo(link.getAttribute("href"));
+      });
+    });
+
     // wave / ripple effect
-    document.querySelectorAll(".wave-btn").forEach(function (btn) {
+    document.querySelectorAll(".wave-btn").forEach(btn => {
       btn.addEventListener("click", function (e) {
         const rect = this.getBoundingClientRect();
         const ripple = document.createElement("span");
@@ -361,12 +708,14 @@
         ripple.style.top = (e.clientY - rect.top - size / 2) + "px";
         ripple.classList.add("ripple");
         this.appendChild(ripple);
-        setTimeout(function () {
-          ripple.remove();
-        }, 600);
+        setTimeout(() => ripple.remove(), 600);
+
+        const target = this.getAttribute("data-target");
+        if (target && target.startsWith("#")) {
+          smoothScrollTo(target);
+        }
       });
     });
   </script>
 </body>
 </html>
-
