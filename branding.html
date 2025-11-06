@@ -1,161 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Design & Branding | Moatermouth</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: linear-gradient(135deg, #fdf2ff, #e0f2fe, #fecdd3);
-      color: #111827;
+      background: linear-gradient(135deg, #e0f2fe, #fdf2ff, #fecdd3);
+      color: #0f172a;
       margin: 0;
+      padding: 0;
     }
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
+
     header {
-      background: rgba(255,255,255,0.9);
+      background: rgba(255,255,255,0.95);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(148,163,184,0.4);
+      padding: 10px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       position: sticky;
       top: 0;
       z-index: 10;
     }
-    .nav-inner {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 10px 18px;
+
+    .logo {
       display: flex;
       align-items: center;
-      justify-content: space_between;
-      gap: 12px;
+      gap: 10px;
     }
-    .nav-left { display:flex;align-items:center;gap:8px; }
-    .logo-img {
-      width:32px;height:32px;border-radius:999px;
-      object-fit:cover;border:2px solid #f9a8d4;background:#fee2ff;
+
+    .logo img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #f9a8d4;
     }
-    .site-title {
-      font-size:15px;
-      letter-spacing:0.14em;
-      text-transform:uppercase;
-      font-weight:600;
+
+    nav a {
+      color: #0f172a;
+      text-decoration: none;
+      margin-left: 14px;
+      font-size: 14px;
+      font-weight: 500;
+      position: relative;
     }
-    .nav-links { display:flex;flex-wrap:wrap;gap:10px;font-size:13px; }
-    .nav-links a { position:relative;padding-bottom:1px; }
-    .nav-links a::after {
-      content:"";position:absolute;left:0;bottom:0;width:0;height:1px;
-      background:#111827;transition:width .18s;
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 1px;
+      left: 0;
+      bottom: 0;
+      background-color: #0f172a;
+      transition: width 0.2s;
     }
-    .nav-links a:hover::after { width:100%; }
+
+    nav a:hover::after {
+      width: 100%;
+    }
 
     main {
-      max-width:960px;
-      margin:0 auto;
-      padding:26px 18px 50px;
-    }
-    h1 { font-size:26px;margin-bottom:4px; }
-    .subtle-text { font-size:14px;color:#6b7280;margin-bottom:12px; }
-    p { font-size:14px;max-width:720px; }
-
-    .project-grid {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:12px;
-      margin-top:16px;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 30px 18px 60px;
     }
 
-    .project-item {
-      background:#ffffff;
-      border-radius:12px;
-      border:1px solid #e5e7eb;
-      padding:10px;
-      box-shadow:0 10px 24px rgba(148,163,184,0.35);
+    h1 {
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 8px;
     }
 
-    .project-item img {
-      border-radius:8px;
-      margin-bottom:6px;
+    p.subtitle {
+      font-size: 15px;
+      color: #475569;
+      margin-bottom: 24px;
     }
 
-    .project-item figcaption {
-      font-size:13px;
-      color:#4b5563;
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
     }
 
-    .project-item figcaption strong {
-      font-weight:600;
-      color:#111827;
+    .card {
+      background: rgba(255,255,255,0.96);
+      border-radius: 14px;
+      padding: 12px;
+      box-shadow: 0 10px 24px rgba(148,163,184,0.35);
+      text-align: center;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 30px rgba(129,140,248,0.55);
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+
+    .card p {
+      font-size: 13px;
+      color: #475569;
     }
 
     footer {
-      text-align:center;
-      padding:16px 18px 24px;
-      font-size:12px;
-      color:#6b7280;
+      text-align: center;
+      padding: 16px;
+      font-size: 12px;
+      color: #6b7280;
     }
 
-    @media(max-width:600px){
-      .nav-inner{flex-direction:column;align-items:flex-start;}
+    .back {
+      display: inline-block;
+      margin-bottom: 20px;
+      text-decoration: underline;
+      color: #2563eb;
+      font-size: 13px;
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="nav-inner">
-      <div class="nav-left">
-        <a href="index.html">
-          <img src="logo.png" alt="Moatermouth logo" class="logo-img" />
-        </a>
-        <div class="site-title">MOATERMOUTH</div>
-      </div>
-      <nav class="nav-links">
-        <a href="index.html#portfolio">Portfolio</a>
-        <a href="index.html#contact">Contact</a>
-      </nav>
+    <div class="logo">
+      <img src="Anjel Logo.jpg" alt="Anjel Logo">
+      <strong>Moatermouth</strong>
     </div>
+    <nav>
+      <a href="index.html">Home</a>
+    </nav>
   </header>
 
   <main>
-    <h1>Design &amp; Branding</h1>
-    <p class="subtle-text">
-      Logos · Simple marks · Visual identities
-    </p>
-    <p>
-      A collection of logo and branding projects that combine illustration, shape, and typography.
-      These pieces explore how a visual identity can feel playful, clear, and memorable across different formats.
-    </p>
+    <a href="index.html" class="back">← Back to Portfolio</a>
+    <h1>Design & Branding</h1>
+    <p class="subtitle">A collection of logos and identity design exploring playful, character-driven branding and visual storytelling.</p>
 
-    <div class="project-grid">
-      <!-- Replace these image names + titles with your own -->
-      <figure class="project-item">
-        <img src="logo_suite.png" alt="Logo suite by Moatermouth">
-        <figcaption>
-          <strong>Logo Suite</strong><br>
-          A set of logo variations built around a single concept, focusing on readability and personality.
-        </figcaption>
-      </figure>
+    <div class="gallery">
+      <div class="card">
+        <img src="Anjel Logo.jpg" alt="Moater Mouth Logo">
+        <h3>Moater Mouth Logo</h3>
+        <p>Personal brand mark and identity for Anjel Robinson’s creative alias, Moatermouth.</p>
+      </div>
 
-      <figure class="project-item">
-        <img src="brand_poster.png" alt="Brand poster design by Moatermouth">
-        <figcaption>
-          <strong>Brand Poster</strong><br>
-          Promotional poster highlighting color, typography, and visual hierarchy for an event or release.
-        </figcaption>
-      </figure>
+      <div class="card">
+        <img src="bao Logo.jpg" alt="BAO Logo 2020">
+        <h3>BAO Logo 2020</h3>
+        <p>Early identity design for BAO — bold, colorful, and simple with organic shapes.</p>
+      </div>
 
-      <figure class="project-item">
-        <img src="identity_system.png" alt="Identity system by Moatermouth">
-        <figcaption>
-          <strong>Identity System</strong><br>
-          Logo, type, and color system designed as a cohesive visual identity across print and digital.
-        </figcaption>
-      </figure>
+      <div class="card">
+        <img src="ChatGPT Image Nov 6, 2025, 02_50_27 PM.png" alt="BAO Logo 2025">
+        <h3>BAO Logo 2025</h3>
+        <p>Refined redesign of BAO logo, updated with warm gradients and playful character.</p>
+      </div>
+
+      <div class="card">
+        <img src="ChatGPT Image Nov 6, 2025, 02_51_04 PM.png" alt="Brain Blip Broadcast Logo 2025">
+        <h3>Brain Blip Broadcast Logo 2025</h3>
+        <p>Retro-inspired design referencing vintage TV visuals and bold pop colors.</p>
+      </div>
     </div>
   </main>
 
   <footer>
-    © <span id="year"></span> Moatermouth · Design &amp; Branding.
+    © <span id="year"></span> Moatermouth · Portfolio of Anjel Robinson
   </footer>
 
   <script>
