@@ -282,70 +282,63 @@
       }
     }
 
-    /* PORTFOLIO COLLECTIONS (THE BIG SQUARES) */
+    /* PORTFOLIO COLLECTIONS (BIG CARDS) */
 
-        <!-- PORTFOLIO COLLECTIONS (BIG CARDS) -->
-    <section id="portfolio">
-      <div class="section-header">
-        <h2>Final Portfolio Collections</h2>
-        <p class="section-subtitle">
-          A curated selection of projects across branding, illustration, fine art, print, and animation.
-        </p>
-      </div>
+    .section-header {
+      margin-bottom: 14px;
+    }
 
-      <div class="collection-grid">
-        <!-- Design & Branding -->
-        <a class="collection-card" href="branding.html">
-          <div class="collection-label">Collection</div>
-          <div class="collection-title">Design &amp; Branding</div>
-          <p class="collection-desc">
-            Logos, visual identities, and graphic design work that focus on clear storytelling and cohesive branding.
-          </p>
-          <span class="collection-link">View Design &amp; Branding →</span>
-        </a>
+    .section-subtitle {
+      font-size: 14px;
+      color: #6b7280;
+    }
 
-        <!-- Illustration & Visual Development -->
-        <a class="collection-card" href="illustration.html">
-          <div class="collection-label">Collection</div>
-          <div class="collection-title">Illustration &amp; Visual Development</div>
-          <p class="collection-desc">
-            Character-driven illustrations and visual development pieces exploring personality, mood, and worldbuilding.
-          </p>
-          <span class="collection-link">View Illustration &amp; Visual Development →</span>
-        </a>
+    .collection-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 16px;
+    }
 
-        <!-- Fine Art & Visual Studies -->
-        <a class="collection-card" href="fineart.html">
-          <div class="collection-label">Collection</div>
-          <div class="collection-title">Fine Art &amp; Visual Studies</div>
-          <p class="collection-desc">
-            Portraits and experimental fine art studies that explore light, form, identity, and emotional atmosphere.
-          </p>
-          <span class="collection-link">View Fine Art &amp; Visual Studies →</span>
-        </a>
+    .collection-card {
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: 16px;
+      padding: 14px;
+      box-shadow: 0 10px 24px rgba(148, 163, 184, 0.45);
+      border: 1px solid rgba(191, 219, 254, 0.95);
+      transition: transform 0.15s ease-out, box-shadow 0.15s ease-out, border-color 0.15s ease-out;
+      display: block;
+    }
 
-        <!-- Print & Promotional Design -->
-        <a class="collection-card" href="print.html">
-          <div class="collection-label">Collection</div>
-          <div class="collection-title">Print &amp; Promotional Design</div>
-          <p class="collection-desc">
-            Posters, book covers, and promotional designs that merge illustration with strong graphic composition.
-          </p>
-          <span class="collection-link">View Print &amp; Promotional Design →</span>
-        </a>
+    .collection-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 30px rgba(129, 140, 248, 0.6);
+      border-color: #a5b4fc;
+    }
 
-        <!-- Animation Reel -->
-        <a class="collection-card" href="animation.html">
-          <div class="collection-label">Collection</div>
-          <div class="collection-title">Animation Reel</div>
-          <p class="collection-desc">
-            Animation is how I bring my drawings to life — a collection of different animation clips gathered into one reel.
-          </p>
-          <span class="collection-link">View Animation Reel →</span>
-        </a>
-      </div>
-    </section>
+    .collection-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      color: #6b7280;
+      margin-bottom: 4px;
+    }
 
+    .collection-title {
+      font-size: 17px;
+      margin-bottom: 6px;
+    }
+
+    .collection-desc {
+      font-size: 13px;
+      color: #4b5563;
+      margin-bottom: 8px;
+    }
+
+    .collection-link {
+      font-size: 12px;
+      color: #2563eb;
+      text-decoration: underline;
+    }
 
     /* RESUME SECTION */
 
@@ -504,7 +497,6 @@
   <header>
     <div class="nav-inner">
       <div class="nav-left">
-        <!-- Logo in circle (branding) -->
         <a href="#top">
           <img src="Anjel Logo.jpg" alt="Anjel logo" class="logo-img" />
         </a>
@@ -517,6 +509,7 @@
         <nav class="nav-links">
           <a href="#top">Home</a>
           <a href="#portfolio">Work</a>
+          <a href="#resume">Resume</a>
           <a href="#contact">About + Contact</a>
         </nav>
       </div>
@@ -560,7 +553,7 @@
           </p>
         </div>
 
-        <!-- Get To Know Me illustration stays on the homepage -->
+        <!-- Get To Know Me illustration -->
         <div class="hero-image-card">
           <img src="get_to_know_me_club_copy.jpg" alt="Get to know me illustration of Anjel" />
         </div>
@@ -582,14 +575,8 @@
           <div class="collection-label">Collection</div>
           <div class="collection-title">Design &amp; Branding</div>
           <p class="collection-desc">
-            Clean, illustrative identity work for posters, logos, and client projects that focus on strong
-            visual storytelling and cohesive design systems.
+            Logos, marks, and identity design that focus on clear visual storytelling and cohesive branding.
           </p>
-          <ul class="collection-items">
-            <li><strong>Branding project 1</strong> – Logo Suite</li>
-            <li><strong>Branding project 2</strong> – Brand Poster</li>
-            <li><strong>Branding project 3</strong> – Identity System</li>
-          </ul>
           <span class="collection-link">View Design &amp; Branding →</span>
         </a>
 
@@ -598,14 +585,8 @@
           <div class="collection-label">Collection</div>
           <div class="collection-title">Illustration &amp; Visual Development</div>
           <p class="collection-desc">
-            Character-driven illustration and visual development exploring personality, mood, and worldbuilding
-            through expressive design and storytelling.
+            Character-focused illustrations and visual development pieces exploring personality, mood, and worldbuilding.
           </p>
-          <ul class="collection-items">
-            <li><strong>Character illustration 1</strong> – Character Lineup</li>
-            <li><strong>Character illustration 2</strong> – Color Script</li>
-            <li><strong>Character illustration 3</strong> – Visual Dev Spread</li>
-          </ul>
           <span class="collection-link">View Illustration &amp; Visual Development →</span>
         </a>
 
@@ -614,14 +595,8 @@
           <div class="collection-label">Collection</div>
           <div class="collection-title">Fine Art &amp; Visual Studies</div>
           <p class="collection-desc">
-            Realistic and abstract works blending traditional and digital media to explore light, form, identity,
-            and emotional atmosphere.
+            Portraits and experimental fine art studies that explore light, form, identity, and emotional atmosphere.
           </p>
-          <ul class="collection-items">
-            <li><strong>Fine art portrait 1</strong> – Portrait Study</li>
-            <li><strong>Fine art portrait 2</strong> – Mixed Media</li>
-            <li><strong>Fine art portrait 3</strong> – Experimental Piece</li>
-          </ul>
           <span class="collection-link">View Fine Art &amp; Visual Studies →</span>
         </a>
 
@@ -630,18 +605,12 @@
           <div class="collection-label">Collection</div>
           <div class="collection-title">Print &amp; Promotional Design</div>
           <p class="collection-desc">
-            Posters, book covers, and product designs that merge illustrative storytelling with graphic clarity
-            and compositional intent.
+            Posters, book covers, and promotional designs that merge illustration with strong graphic composition.
           </p>
-          <ul class="collection-items">
-            <li><strong>Poster design 1</strong> – Event Poster</li>
-            <li><strong>Book cover 1</strong> – Book Cover</li>
-            <li><strong>Package design 1</strong> – Package Design</li>
-          </ul>
           <span class="collection-link">View Print &amp; Promotional Design →</span>
         </a>
 
-        <!-- Animation Reel – simple description -->
+        <!-- Animation Reel -->
         <a class="collection-card" href="animation.html">
           <div class="collection-label">Collection</div>
           <div class="collection-title">Animation Reel</div>
@@ -774,5 +743,6 @@
   </script>
 </body>
 </html>
+
 
     
