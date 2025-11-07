@@ -101,14 +101,6 @@
       width: 100%;
     }
 
-    .nav-label {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: #94a3b8;
-      padding-right: 2px;
-    }
-
     @media (max-width: 640px) {
       .nav-inner {
         flex-direction: column;
@@ -212,10 +204,35 @@
 
     .slide {
       display: none;
+      position: relative;
     }
 
     .slide.active {
       display: block;
+    }
+
+    .slide-link {
+      position: relative;
+      display: block;
+    }
+
+    .slide-label {
+      position: absolute;
+      left: 8px;
+      bottom: 8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.75);
+      color: #f9fafb;
+      font-size: 11px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .slide img {
+      width: 100%;
+      height: auto;
+      border-radius: 14px;
     }
 
     .slider-controls {
@@ -266,12 +283,6 @@
       border-color: #1d4ed8;
     }
 
-    .slide img {
-      width: 100%;
-      height: auto;
-      border-radius: 14px;
-    }
-
     /* BUTTONS / WAVE EFFECT */
     .btn {
       position: relative;
@@ -291,12 +302,6 @@
       background: linear-gradient(135deg, #60a5fa, #f472b6);
       color: #ffffff;
       box-shadow: 0 10px 20px rgba(129, 140, 248, 0.55);
-    }
-
-    .btn-ghost {
-      background: #ffffff;
-      border: 1px solid #cbd5f5;
-      color: #0f172a;
     }
 
     .wave-btn .ripple {
@@ -426,7 +431,7 @@
     }
 
     .contact-form button {
-      align-self: flex-start;
+      alignself: flex-start;
       margin-top: 4px;
       background: linear-gradient(135deg,#60a5fa,#f472b6);
       color:#fff;
@@ -458,8 +463,9 @@
   <header>
     <div class="nav-inner">
       <div class="nav-left">
+        <!-- clicking the logo just scrolls to top of this page -->
         <a href="#top">
-          <img src="Anjel Logo.jpg" alt="Anjel logo" class="logo-img" />
+          <img src="Anjel Logo.jpg" alt="Moatermouth logo" class="logo-img" />
         </a>
         <div>
           <div class="site-title">MOATERMOUTH</div>
@@ -469,9 +475,8 @@
       <div class="nav-right">
         <nav class="nav-links">
           <a href="#top">Home</a>
-          <span class="nav-label">Art:</span>
-          <!-- mapping to your existing pages -->
-          <a href="design.html">Logos</a>
+          <!-- art pages mapped to your existing files -->
+          <a href="branding.html">Logos</a>
           <a href="print.html">Design</a>
           <a href="fineart.html">Fine Art</a>
           <a href="illustration.html">Visual Development</a>
@@ -516,37 +521,47 @@
           </p>
         </div>
 
-        <!-- slider with 5 images linking to sections -->
+        <!-- slider with 6 images -->
         <div class="hero-image-card">
           <div class="hero-slider" id="hero-slider">
-            <!-- 1. BAO apple → Logos -->
+            <!-- 0. Get To Know Me (intro only) -->
             <div class="slide active">
-              <a href="design.html">
-                <img src="ChatGPT Image Nov 6, 2025, 02_50_27 PM.png" alt="BAO Logo 2025">
+              <img src="get_to_know_me_club_copy.jpg" alt="Get to know me illustration of Anjel" />
+              <div class="slide-label">Get to Know Me</div>
+            </div>
+            <!-- 1. BAO apple → Logos -->
+            <div class="slide">
+              <a class="slide-link" href="branding.html">
+                <img src="ChatGPT Image Nov 6, 2025, 02_50_27 PM.png" alt="BAO Logo 2025" />
+                <div class="slide-label">Logos</div>
               </a>
             </div>
             <!-- 2. Vatican Vapers → Design -->
             <div class="slide">
-              <a href="print.html">
-                <img src="Vatican Vapers album copy.jpg" alt="Vatican Vapers album design">
+              <a class="slide-link" href="print.html">
+                <img src="Vatican Vapers album copy.jpg" alt="Vatican Vapers album design" />
+                <div class="slide-label">Design</div>
               </a>
             </div>
             <!-- 3. Portrait → Fine Art -->
             <div class="slide">
-              <a href="fineart.html">
-                <img src="brent logos-Recovered.jpg" alt="Fine art portrait painting">
+              <a class="slide-link" href="fineart.html">
+                <img src="brent logos-Recovered.jpg" alt="Fine art portrait painting" />
+                <div class="slide-label">Fine Art</div>
               </a>
             </div>
             <!-- 4. Growing Together → Visual Development -->
             <div class="slide">
-              <a href="illustration.html">
-                <img src="GTLJPG.jpg" alt="Growing Together visual development illustration">
+              <a class="slide-link" href="illustration.html">
+                <img src="GTLJPG.jpg" alt="Growing Together visual development illustration" />
+                <div class="slide-label">Visual Development</div>
               </a>
             </div>
             <!-- 5. Animation still → Animation -->
             <div class="slide">
-              <a href="animation.html">
-                <img src="animation_still.jpg" alt="Animation reel still">
+              <a class="slide-link" href="animation.html">
+                <img src="animation_still.jpg" alt="Animation reel still" />
+                <div class="slide-label">Animation</div>
               </a>
             </div>
 
@@ -560,6 +575,7 @@
               <span class="slider-dot" data-index="2"></span>
               <span class="slider-dot" data-index="3"></span>
               <span class="slider-dot" data-index="4"></span>
+              <span class="slider-dot" data-index="5"></span>
             </div>
           </div>
         </div>
@@ -714,6 +730,7 @@
   </script>
 </body>
 </html>
+
 
 
     
