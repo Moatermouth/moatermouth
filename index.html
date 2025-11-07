@@ -108,7 +108,7 @@
       }
     }
 
-    /* HERO LAYOUT */
+    /* MAIN LAYOUT */
     main {
       max-width: 960px;
       margin: 0 auto;
@@ -120,7 +120,6 @@
       grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
       gap: 24px;
       align-items: center;
-      margin-bottom: 30px;
     }
 
     @media (max-width: 768px) {
@@ -129,6 +128,7 @@
       }
     }
 
+    /* LEFT HERO TEXT – NO BOX, ON GRADIENT */
     .hero-card {
       padding-right: 4px;
       background: transparent;
@@ -137,6 +137,12 @@
 
     .hero-card * {
       text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 600;
+      margin-bottom: 8px;
     }
 
     .hero-tagline {
@@ -183,20 +189,22 @@
       background: linear-gradient(135deg, #60a5fa, #f472b6);
       color: #fff;
       box-shadow: 0 10px 20px rgba(129, 140, 248, 0.55);
+      margin-bottom: 6px;
     }
 
     .hero-note {
       font-size: 12px;
       color: #6b7280;
+      text-shadow: none;
     }
 
-    /* SLIDER */
+    /* RIGHT HERO – SLIDER */
     .hero-image-card {
       border-radius: 18px;
       padding: 10px;
       box-shadow: 0 12px 30px rgba(148, 163, 184, 0.45);
       border: 1px solid rgba(191, 219, 254, 0.95);
-      background: rgba(255,255,255,0.5);
+      background: rgba(255, 255, 255, 0.5);
     }
 
     .hero-slider {
@@ -219,23 +227,23 @@
       display: block;
     }
 
+    .slide img {
+      width: 100%;
+      height: auto;
+      border-radius: 14px;
+    }
+
     .slide-label {
       position: absolute;
       left: 8px;
       bottom: 8px;
       padding: 4px 10px;
       border-radius: 999px;
-      background: rgba(15,23,42,0.75);
+      background: rgba(15, 23, 42, 0.75);
       color: #f9fafb;
       font-size: 11px;
       letter-spacing: 0.05em;
       text-transform: uppercase;
-    }
-
-    .slide img {
-      width: 100%;
-      height: auto;
-      border-radius: 14px;
     }
 
     .slider-controls {
@@ -295,6 +303,7 @@
   </style>
 </head>
 <body>
+  <a id="top"></a>
   <header>
     <div class="nav-inner">
       <div class="nav-left">
@@ -322,6 +331,7 @@
 
   <main>
     <section class="hero-layout">
+      <!-- LEFT: TEXT ON GRADIENT -->
       <div class="hero-card">
         <h1>Story &amp; Visual Development Portfolio</h1>
         <p class="hero-tagline">
@@ -338,53 +348,61 @@
           <span class="pill">Character Work</span>
           <span class="pill">Animation</span>
         </div>
-        <button class="btn" onclick="window.location.href='about.html'">About + Contact</button>
+        <button class="btn" onclick="window.location.href='about.html'">
+          About + Contact
+        </button>
         <p class="hero-note">
           Based in Cincinnati, OH · open to internships, co-op, and select freelance projects.
         </p>
       </div>
 
-      <!-- Gallery -->
+      <!-- RIGHT: GALLERY SLIDER -->
       <div class="hero-image-card">
         <div class="hero-slider" id="hero-slider">
+          <!-- 0. Get To Know Me (intro only, not clickable) -->
           <div class="slide active">
-            <img src="get_to_know_me_club_copy.jpg" alt="Get to know me" />
-            <div class="slide-label">Get to Know Me</div>
+            <img src="get_to_know_me_club_copy.jpg" alt="Get to know me illustration" />
+            <div class="slide-label">Get To Know Me</div>
           </div>
+          <!-- 1. BAO apple → Logos -->
           <div class="slide">
             <a href="branding.html" class="slide-link">
               <img src="ChatGPT Image Nov 6, 2025, 02_50_27 PM.png" alt="BAO Logo" />
               <div class="slide-label">Logos</div>
             </a>
           </div>
+          <!-- 2. Vatican Vapers → Design -->
           <div class="slide">
             <a href="print.html" class="slide-link">
               <img src="Vatican Vapers album copy.jpg" alt="Design work" />
               <div class="slide-label">Design</div>
             </a>
           </div>
+          <!-- 3. Brent portrait → Fine Art -->
           <div class="slide">
             <a href="fineart.html" class="slide-link">
-              <img src="brent logos-Recovered.jpg" alt="Fine Art" />
+              <img src="brent logos-Recovered.jpg" alt="Fine art portrait" />
               <div class="slide-label">Fine Art</div>
             </a>
           </div>
+          <!-- 4. Growing Together → Visual Dev -->
           <div class="slide">
             <a href="illustration.html" class="slide-link">
-              <img src="GTLJPG.jpg" alt="Visual Dev" />
+              <img src="GTLJPG.jpg" alt="Visual development illustration" />
               <div class="slide-label">Visual Development</div>
             </a>
           </div>
+          <!-- 5. Animation still → Animation -->
           <div class="slide">
             <a href="animation.html" class="slide-link">
-              <img src="animation_still.jpg" alt="Animation" />
+              <img src="animation_still.jpg" alt="Animation reel still" />
               <div class="slide-label">Animation</div>
             </a>
           </div>
 
           <div class="slider-controls">
-            <button class="slider-btn" id="prev-slide">‹</button>
-            <button class="slider-btn" id="next-slide">›</button>
+            <button class="slider-btn" id="prev-slide" aria-label="Previous slide">‹</button>
+            <button class="slider-btn" id="next-slide" aria-label="Next slide">›</button>
           </div>
           <div class="slider-dots" id="slider-dots">
             <span class="slider-dot active" data-index="0"></span>
@@ -404,7 +422,10 @@
   </footer>
 
   <script>
+    // footer year
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // slider logic
     const slides = document.querySelectorAll(".slide");
     const dots = document.querySelectorAll(".slider-dot");
     const prev = document.getElementById("prev-slide");
@@ -419,12 +440,9 @@
 
     prev.addEventListener("click", () => showSlide(index - 1));
     next.addEventListener("click", () => showSlide(index + 1));
-    dots.forEach(dot => dot.addEventListener("click", e => showSlide(parseInt(e.target.dataset.index))));
+    dots.forEach(dot =>
+      dot.addEventListener("click", e => showSlide(parseInt(e.target.dataset.index)))
+    );
   </script>
 </body>
 </html>
-
-           
-
-
-    
