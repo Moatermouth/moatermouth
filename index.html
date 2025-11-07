@@ -6,11 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Portfolio of Moatermouth (alias of Anjel Robinson) — Visual Development Artist, Illustrator & Animator.">
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -20,18 +16,10 @@
       line-height: 1.6;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
 
     /* HEADER / NAV */
-
     header {
       background: rgba(255, 255, 255, 0.94);
       backdrop-filter: blur(10px);
@@ -89,7 +77,8 @@
     .nav-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 10px;
+      align-items: center;
     }
 
     .nav-links a {
@@ -112,6 +101,14 @@
       width: 100%;
     }
 
+    .nav-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #94a3b8;
+      padding-right: 2px;
+    }
+
     @media (max-width: 640px) {
       .nav-inner {
         flex-direction: column;
@@ -120,43 +117,20 @@
     }
 
     /* LAYOUT */
-
     main {
       max-width: 960px;
       margin: 0 auto;
       padding: 30px 18px 60px;
     }
 
-    section {
-      margin-bottom: 40px;
-    }
+    section { margin-bottom: 40px; }
 
-    h1, h2, h3 {
-      font-weight: 600;
-    }
-
-    h1 {
-      font-size: 32px;
-      margin-bottom: 8px;
-    }
-
-    h2 {
-      font-size: 22px;
-      margin-bottom: 8px;
-    }
-
-    h3 {
-      font-size: 18px;
-      margin-bottom: 6px;
-    }
-
-    .subtle-text {
-      font-size: 14px;
-      color: #6b7280;
-    }
+    h1, h2, h3 { font-weight: 600; }
+    h1 { font-size: 32px; margin-bottom: 8px; }
+    h2 { font-size: 22px; margin-bottom: 8px; }
+    .subtle-text { font-size: 14px; color: #6b7280; }
 
     /* HERO */
-
     .hero-layout {
       display: grid;
       grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
@@ -221,6 +195,7 @@
       color: #6b7280;
     }
 
+    /* HERO SLIDER */
     .hero-image-card {
       background: rgba(255, 255, 255, 0.96);
       border-radius: 18px;
@@ -229,15 +204,76 @@
       border: 1px solid rgba(191, 219, 254, 0.95);
     }
 
-    .hero-image-card img {
+    .hero-slider {
+      position: relative;
+      overflow: hidden;
+      border-radius: 14px;
+    }
+
+    .slide {
+      display: none;
+    }
+
+    .slide.active {
+      display: block;
+    }
+
+    .slider-controls {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      pointer-events: none;
+    }
+
+    .slider-btn {
+      pointer-events: auto;
+      background: rgba(15, 23, 42, 0.45);
+      color: white;
+      border: none;
+      border-radius: 999px;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 0 6px;
+    }
+
+    .slider-dots {
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 6px;
+    }
+
+    .slider-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      border: 1px solid rgba(15,23,42,0.5);
+      background: rgba(255,255,255,0.7);
+      cursor: pointer;
+    }
+
+    .slider-dot.active {
+      background: #60a5fa;
+      border-color: #1d4ed8;
+    }
+
+    .slide img {
+      width: 100%;
+      height: auto;
       border-radius: 14px;
     }
 
     /* BUTTONS / WAVE EFFECT */
-
-    .btn,
-    .social-chip,
-    .resume-download {
+    .btn {
       position: relative;
       overflow: hidden;
       cursor: pointer;
@@ -245,9 +281,6 @@
       align-items: center;
       justify-content: center;
       gap: 4px;
-    }
-
-    .btn {
       padding: 9px 16px;
       border-radius: 999px;
       font-size: 13px;
@@ -276,101 +309,10 @@
     }
 
     @keyframes ripple {
-      to {
-        transform: scale(4);
-        opacity: 0;
-      }
+      to { transform: scale(4); opacity: 0; }
     }
 
-    /* PORTFOLIO COLLECTIONS (BIG CARDS) */
-
-    .section-header {
-      margin-bottom: 14px;
-    }
-
-    .section-subtitle {
-      font-size: 14px;
-      color: #6b7280;
-    }
-
-    .collection-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 16px;
-    }
-
-    .collection-card {
-      background: rgba(255, 255, 255, 0.96);
-      border-radius: 16px;
-      padding: 14px;
-      box-shadow: 0 10px 24px rgba(148, 163, 184, 0.45);
-      border: 1px solid rgba(191, 219, 254, 0.95);
-      transition: transform 0.15s ease-out, box-shadow 0.15s ease-out, border-color 0.15s ease-out;
-      display: block;
-    }
-
-    .collection-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 14px 30px rgba(129, 140, 248, 0.6);
-      border-color: #a5b4fc;
-    }
-
-    .collection-label {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.13em;
-      color: #6b7280;
-      margin-bottom: 4px;
-    }
-
-    .collection-title {
-      font-size: 17px;
-      margin-bottom: 6px;
-    }
-
-    .collection-desc {
-      font-size: 13px;
-      color: #4b5563;
-      margin-bottom: 8px;
-    }
-
-    .collection-link {
-      font-size: 12px;
-      color: #2563eb;
-      text-decoration: underline;
-    }
-
-    /* RESUME SECTION */
-
-    .resume-section {
-      background: rgba(255, 255, 255, 0.96);
-      border-radius: 14px;
-      padding: 18px;
-      box-shadow: 0 6px 16px rgba(148, 163, 184, 0.35);
-      font-size: 14px;
-    }
-
-    .resume-section p {
-      color: #374151;
-      margin-bottom: 8px;
-    }
-
-    .resume-section strong {
-      color: #111827;
-    }
-
-    .resume-download {
-      background: linear-gradient(135deg, #60a5fa, #f472b6);
-      color: #ffffff;
-      padding: 7px 16px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-size: 13px;
-      box-shadow: 0 8px 18px rgba(129, 140, 248, 0.55);
-    }
-
-    /* ABOUT + CONTACT SECTION */
-
+    /* ABOUT + CONTACT + RESUME */
     .contact-box {
       background: rgba(255, 255, 255, 0.96);
       border-radius: 14px;
@@ -380,16 +322,36 @@
       display: grid;
       grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.3fr);
       gap: 16px;
+      align-items: flex-start;
+    }
+
+    .contact-box p { color: #374151; margin-bottom: 6px; }
+    .contact-emails a { color: #2563eb; }
+
+    .resume-block {
+      margin-top: 14px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(148,163,184,0.5);
+    }
+
+    .resume-block p { margin-bottom: 6px; }
+
+    .resume-download {
+      position: relative;
+      overflow: hidden;
+      display: inline-flex;
       align-items: center;
-    }
-
-    .contact-box p {
-      color: #374151;
-      margin-bottom: 6px;
-    }
-
-    .contact-emails a {
-      color: #2563eb;
+      justify-content: center;
+      background: linear-gradient(135deg, #60a5fa, #f472b6);
+      color: #ffffff;
+      padding: 7px 16px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 13px;
+      box-shadow: 0 8px 18px rgba(129, 140, 248, 0.55);
+      border: none;
+      cursor: pointer;
+      margin-top: 4px;
     }
 
     .social-links {
@@ -406,10 +368,9 @@
       border: 1px solid #bfdbfe;
       color: #1e3a8a;
       font-size: 13px;
-    }
-
-    .social-chip span.icon {
-      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
     }
 
     .contact-photo {
@@ -508,8 +469,13 @@
       <div class="nav-right">
         <nav class="nav-links">
           <a href="#top">Home</a>
-          <a href="#portfolio">Work</a>
-          <a href="#resume">Resume</a>
+          <span class="nav-label">Art:</span>
+          <!-- mapping to your existing pages -->
+          <a href="design.html">Logos</a>
+          <a href="print.html">Design</a>
+          <a href="fineart.html">Fine Art</a>
+          <a href="illustration.html">Visual Development</a>
+          <a href="animation.html">Animation</a>
           <a href="#contact">About + Contact</a>
         </nav>
       </div>
@@ -519,7 +485,7 @@
   <main>
     <a id="top"></a>
 
-    <!-- HERO with Get To Know Me drawing -->
+    <!-- HERO with slider -->
     <section>
       <div class="hero-layout">
         <div class="hero-card">
@@ -541,10 +507,7 @@
             <span class="pill">Animation</span>
           </div>
           <div class="hero-buttons">
-            <button class="btn btn-primary wave-btn" data-target="#portfolio">
-              View Work
-            </button>
-            <button class="btn btn-ghost wave-btn" data-target="#contact">
+            <button class="btn btn-primary wave-btn" data-target="#contact">
               About + Contact
             </button>
           </div>
@@ -553,91 +516,57 @@
           </p>
         </div>
 
-        <!-- Get To Know Me illustration -->
+        <!-- slider with 5 images linking to sections -->
         <div class="hero-image-card">
-          <img src="get_to_know_me_club_copy.jpg" alt="Get to know me illustration of Anjel" />
+          <div class="hero-slider" id="hero-slider">
+            <!-- 1. BAO apple → Logos -->
+            <div class="slide active">
+              <a href="design.html">
+                <img src="ChatGPT Image Nov 6, 2025, 02_50_27 PM.png" alt="BAO Logo 2025">
+              </a>
+            </div>
+            <!-- 2. Vatican Vapers → Design -->
+            <div class="slide">
+              <a href="print.html">
+                <img src="Vatican Vapers album copy.jpg" alt="Vatican Vapers album design">
+              </a>
+            </div>
+            <!-- 3. Portrait → Fine Art -->
+            <div class="slide">
+              <a href="fineart.html">
+                <img src="brent logos-Recovered.jpg" alt="Fine art portrait painting">
+              </a>
+            </div>
+            <!-- 4. Growing Together → Visual Development -->
+            <div class="slide">
+              <a href="illustration.html">
+                <img src="GTLJPG.jpg" alt="Growing Together visual development illustration">
+              </a>
+            </div>
+            <!-- 5. Animation still → Animation -->
+            <div class="slide">
+              <a href="animation.html">
+                <img src="animation_still.jpg" alt="Animation reel still">
+              </a>
+            </div>
+
+            <div class="slider-controls">
+              <button class="slider-btn" id="prev-slide" aria-label="Previous slide">‹</button>
+              <button class="slider-btn" id="next-slide" aria-label="Next slide">›</button>
+            </div>
+            <div class="slider-dots" id="slider-dots">
+              <span class="slider-dot active" data-index="0"></span>
+              <span class="slider-dot" data-index="1"></span>
+              <span class="slider-dot" data-index="2"></span>
+              <span class="slider-dot" data-index="3"></span>
+              <span class="slider-dot" data-index="4"></span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- PORTFOLIO COLLECTIONS (BIG CARDS) -->
-    <section id="portfolio">
-      <div class="section-header">
-        <h2>Final Portfolio Collections</h2>
-        <p class="section-subtitle">
-          A curated selection of projects across branding, illustration, fine art, print, and animation.
-        </p>
-      </div>
-
-      <div class="collection-grid">
-        <!-- Design & Branding -->
-        <a class="collection-card" href="branding.html">
-          <div class="collection-label">Collection</div>
-          <div class="collection-title">Design &amp; Branding</div>
-          <p class="collection-desc">
-            Logos, marks, and identity design that focus on clear visual storytelling and cohesive branding.
-          </p>
-          <span class="collection-link">View Design &amp; Branding →</span>
-        </a>
-
-        <!-- Illustration & Visual Development -->
-        <a class="collection-card" href="illustration.html">
-          <div class="collection-label">Collection</div>
-          <div class="collection-title">Illustration &amp; Visual Development</div>
-          <p class="collection-desc">
-            Character-focused illustrations and visual development pieces exploring personality, mood, and worldbuilding.
-          </p>
-          <span class="collection-link">View Illustration &amp; Visual Development →</span>
-        </a>
-
-        <!-- Fine Art & Visual Studies -->
-        <a class="collection-card" href="fineart.html">
-          <div class="collection-label">Collection</div>
-          <div class="collection-title">Fine Art &amp; Visual Studies</div>
-          <p class="collection-desc">
-            Portraits and experimental fine art studies that explore light, form, identity, and emotional atmosphere.
-          </p>
-          <span class="collection-link">View Fine Art &amp; Visual Studies →</span>
-        </a>
-
-        <!-- Print & Promotional Design -->
-        <a class="collection-card" href="print.html">
-          <div class="collection-label">Collection</div>
-          <div class="collection-title">Print &amp; Promotional Design</div>
-          <p class="collection-desc">
-            Posters, book covers, and promotional designs that merge illustration with strong graphic composition.
-          </p>
-          <span class="collection-link">View Print &amp; Promotional Design →</span>
-        </a>
-
-        <!-- Animation Reel -->
-        <a class="collection-card" href="animation.html">
-          <div class="collection-label">Collection</div>
-          <div class="collection-title">Animation Reel</div>
-          <p class="collection-desc">
-            Animation is how I bring my drawings to life — a collection of different animation clips gathered into one reel.
-          </p>
-          <span class="collection-link">View Animation Reel →</span>
-        </a>
-      </div>
-    </section>
-
-    <!-- RESUME -->
-    <section id="resume" class="resume-section">
-      <h2>Resume</h2>
-      <p>
-        <strong>Student &amp; Visual Development Artist</strong><br>
-        BFA in Games &amp; Animation, University of Cincinnati (DAAP) · Screenwriting Certificate · Class of <strong>2027</strong>
-      </p>
-      <p>
-        Experience in mural work, teaching, customer service, and visual storytelling through illustration and animation.
-      </p>
-      <a class="resume-download wave-btn" href="Robinson_Anjel_Final_Resume.pdf" target="_blank">
-        📄 View Full Resume (PDF)
-      </a>
-    </section>
-
-    <!-- ABOUT ME + CONTACT -->
+    <!-- ABOUT + CONTACT + RESUME IN ONE SECTION -->
     <section id="contact" class="contact-box">
       <div>
         <h2>About Me + Contact</h2>
@@ -663,17 +592,32 @@
         </div>
 
         <div class="social-links">
-          <a class="social-chip wave-btn" href="https://www.instagram.com/moatermouth/" target="_blank" rel="noreferrer">
-            <span class="icon">📸</span> Instagram
+          <a class="social-chip" href="https://www.instagram.com/moatermouth/" target="_blank" rel="noreferrer">
+            <span>📸</span> Instagram
           </a>
-          <a class="social-chip wave-btn" href="https://www.youtube.com/@moatermouth7141" target="_blank" rel="noreferrer">
-            <span class="icon">▶</span> YouTube
+          <a class="social-chip" href="https://www.youtube.com/@moatermouth7141" target="_blank" rel="noreferrer">
+            <span>▶</span> YouTube
           </a>
-          <a class="social-chip wave-btn" href="https://www.linkedin.com/in/anjel-rob/" target="_blank" rel="noreferrer">
-            <span class="icon">in</span> LinkedIn
+          <a class="social-chip" href="https://www.linkedin.com/in/anjel-rob/" target="_blank" rel="noreferrer">
+            <span>in</span> LinkedIn
           </a>
-          <a class="social-chip wave-btn" href="https://uc.joinhandshake.com/profiles/anjel-rob" target="_blank" rel="noreferrer">
-            <span class="icon">🤝</span> Handshake
+          <a class="social-chip" href="https://uc.joinhandshake.com/profiles/anjel-rob" target="_blank" rel="noreferrer">
+            <span>🤝</span> Handshake
+          </a>
+        </div>
+
+        <!-- Resume info moved here -->
+        <div class="resume-block">
+          <h3>Resume</h3>
+          <p>
+            <strong>Student &amp; Visual Development Artist</strong><br>
+            BFA in Games &amp; Animation, University of Cincinnati (DAAP) · Screenwriting Certificate · Class of <strong>2027</strong>
+          </p>
+          <p>
+            Experience in mural work, teaching, customer service, and visual storytelling through illustration and animation.
+          </p>
+          <a class="resume-download" href="Robinson_Anjel_Final_Resume.pdf" target="_blank">
+            📄 View Full Resume (PDF)
           </a>
         </div>
 
@@ -713,7 +657,7 @@
       window.scrollTo({ top: y, behavior: "smooth" });
     }
 
-    // smooth scroll for header nav
+    // smooth scroll for internal nav links
     document.querySelectorAll('.nav-links a[href^="#"]').forEach(link => {
       link.addEventListener("click", (e) => {
         e.preventDefault();
@@ -740,6 +684,33 @@
         }
       });
     });
+
+    // HERO SLIDER LOGIC
+    (function () {
+      const slides = Array.from(document.querySelectorAll("#hero-slider .slide"));
+      const dots = Array.from(document.querySelectorAll("#slider-dots .slider-dot"));
+      const prevBtn = document.getElementById("prev-slide");
+      const nextBtn = document.getElementById("next-slide");
+      if (!slides.length) return;
+
+      let index = 0;
+
+      function showSlide(i) {
+        index = (i + slides.length) % slides.length;
+        slides.forEach((s, idx) => s.classList.toggle("active", idx === index));
+        dots.forEach((d, idx) => d.classList.toggle("active", idx === index));
+      }
+
+      prevBtn.addEventListener("click", () => showSlide(index - 1));
+      nextBtn.addEventListener("click", () => showSlide(index + 1));
+
+      dots.forEach(dot => {
+        dot.addEventListener("click", () => {
+          const i = parseInt(dot.getAttribute("data-index"), 10);
+          showSlide(i);
+        });
+      });
+    })();
   </script>
 </body>
 </html>
