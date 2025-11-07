@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>About & Contact | Moatermouth (Anjel Robinson)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="About, resume, and contact information for Moatermouth (alias of Anjel Robinson), visual development artist and animator.">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #e0f2fe, #fdf2ff, #fecdd3);
+      color: #0f172a;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    /* HEADER / NAV – matches other pages */
+    header {
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.4);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 10px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo-img {
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      object-fit: cover;
+      border: 2px solid #f9a8d4;
+      background: #fee2ff;
+    }
+
+    .site-title {
+      font-size: 14px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .site-sub {
+      font-size: 11px;
+      color: #6b7280;
+    }
+
+    .nav-right {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 2px;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      height: 1px;
+      background-color: #0f172a;
+      transition: width 0.18s ease-out;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    @media (max-width: 640px) {
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    /* LAYOUT */
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 30px 18px 60px;
+    }
+
+    h1, h2, h3 { font-weight: 600; }
+    h1 { font-size: 28px; margin-bottom: 8px; }
+
+    /* ABOUT + CONTACT + RESUME CARD */
+    .contact-box {
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: 14px;
+      padding: 18px;
+      box-shadow: 0 6px 16px rgba(148, 163, 184, 0.35);
+      font-size: 14px;
+      display: grid;
+      grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.3fr);
+      gap: 16px;
+      align-items: flex-start;
+      margin-top: 16px;
+    }
+
+    .contact-box p { color: #374151; margin-bottom: 6px; }
+    .contact-emails a { color: #2563eb; }
+
+    .resume-block {
+      margin-top: 14px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(148,163,184,0.5);
+    }
+
+    .resume-block p { margin-bottom: 6px; }
+
+    .resume-download {
+      position: relative;
+      overflow: hidden;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #60a5fa, #f472b6);
+      color: #ffffff;
+      padding: 7px 16px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 13px;
+      box-shadow: 0 8px 18px rgba(129, 140, 248, 0.55);
+      border: none;
+      cursor: pointer;
+      margin-top: 4px;
+    }
+
+    .social-links {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .social-chip {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: #1e3a8a;
+      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .contact-photo {
+      display: flex;
+      justify-content: center;
+    }
+
+    .contact-photo img {
+      width: 210px;
+      height: 210px;
+      object-fit: cover;
+      border-radius: 999px;
+      border: 3px solid #f9a8d4;
+      box-shadow: 0 10px 24px rgba(148,163,184,0.5);
+    }
+
+    .contact-form {
+      margin-top: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      max-width: 420px;
+    }
+
+    .contact-form label {
+      font-size: 13px;
+      font-weight: 500;
+      color: #111827;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 7px 9px;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      font-size: 13px;
+      font-family: inherit;
+      background: #f9fafb;
+    }
+
+    .contact-form textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: #60a5fa;
+      box-shadow: 0 0 0 1px #60a5fa33;
+      background: #ffffff;
+    }
+
+    .contact-form button {
+      align-self: flex-start;
+      margin-top: 4px;
+      background: linear-gradient(135deg,#60a5fa,#f472b6);
+      color:#fff;
+      padding:8px 16px;
+      border-radius:999px;
+      border:none;
+      cursor:pointer;
+      font-size:13px;
+    }
+
+    @media (max-width: 800px) {
+      .contact-box {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .contact-photo {
+        order: -1;
+      }
+    }
+
+    footer {
+      text-align: center;
+      padding: 16px 18px 24px;
+      font-size: 12px;
+      color: #6b7280;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-inner">
+      <div class="nav-left">
+        <a href="index.html">
+          <img src="Anjel Logo.jpg" alt="Moatermouth logo" class="logo-img" />
+        </a>
+        <div>
+          <div class="site-title">MOATERMOUTH</div>
+          <div class="site-sub">alias of Anjel Robinson</div>
+        </div>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="branding.html">Logos</a>
+          <a href="print.html">Design</a>
+          <a href="fineart.html">Fine Art</a>
+          <a href="illustration.html">Visual Development</a>
+          <a href="animation.html">Animation</a>
+          <a href="about.html">About + Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <h1>About Me + Contact</h1>
+
+    <section id="contact" class="contact-box">
+      <div>
+        <p>
+          Hi, I'm <strong>Anjel Robinson</strong> — a visual development artist and animator based in Cincinnati, Ohio.
+          I’m currently studying <strong>Games &amp; Animation at the University of Cincinnati (Class of 2027)</strong>.
+          I love animating, drawing, and sharing creativity through teaching.
+        </p>
+        <p>
+          My work focuses on bringing characters to life through expressive movement, color, and storytelling.
+          I’m open to internships, co-ops, commissions, and collaborative projects — feel free to reach out!
+        </p>
+
+        <div class="contact-emails">
+          <p>
+            <strong>School Email:</strong>
+            <a href="mailto:Robin5a6@mail.uc.edu">Robin5a6@mail.uc.edu</a>
+          </p>
+          <p>
+            <strong>Art Email:</strong>
+            <a href="mailto:moatermouthart@gmail.com">moatermouthart@gmail.com</a>
+          </p>
+        </div>
+
+        <div class="social-links">
+          <a class="social-chip" href="https://www.instagram.com/moatermouth/" target="_blank" rel="noreferrer">
+            <span>📸</span> Instagram
+          </a>
+          <a class="social-chip" href="https://www.youtube.com/@moatermouth7141" target="_blank" rel="noreferrer">
+            <span>▶</span> YouTube
+          </a>
+          <a class="social-chip" href="https://www.linkedin.com/in/anjel-rob/" target="_blank" rel="noreferrer">
+            <span>in</span> LinkedIn
+          </a>
+          <a class="social-chip" href="https://uc.joinhandshake.com/profiles/anjel-rob" target="_blank" rel="noreferrer">
+            <span>🤝</span> Handshake
+          </a>
+        </div>
+
+        <!-- Resume info -->
+        <div class="resume-block">
+          <h3>Resume</h3>
+          <p>
+            <strong>Student &amp; Visual Development Artist</strong><br>
+            BFA in Games &amp; Animation, University of Cincinnati (DAAP) · Screenwriting Certificate · Class of <strong>2027</strong>
+          </p>
+          <p>
+            Experience in mural work, teaching, customer service, and visual storytelling through illustration and animation.
+          </p>
+          <a class="resume-download" href="Robinson_Anjel_Final_Resume.pdf" target="_blank">
+            📄 View Full Resume (PDF)
+          </a>
+        </div>
+
+        <!-- Contact form -->
+        <form class="contact-form" action="mailto:Robin5a6@mail.uc.edu" method="post" enctype="text/plain">
+          <label for="name">Name</label>
+          <input id="name" name="Name" type="text" placeholder="Your name" required>
+
+          <label for="email">Email</label>
+          <input id="email" name="Email" type="email" placeholder="your@email.com" required>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="Message" placeholder="Tell me a bit about your project or question." required></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+
+      <div class="contact-photo">
+        <img src="Anjel Headshot.jpg" alt="Photo of Anjel Robinson" />
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Moatermouth · Portfolio of Anjel Robinson.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
